@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2021 at 06:31 PM
+-- Generation Time: Mar 10, 2022 at 10:33 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `agriculture`
+-- Database: `tutor`
 --
 
 -- --------------------------------------------------------
@@ -40,11 +40,8 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `categoty_name`, `logo`, `created_at`, `updated_at`) VALUES
-(13, 'agricultural', 'media/category/150821_17_30_47.png', NULL, NULL),
-(14, 'agricultural one', 'media/category/150821_17_02_50.jpg', NULL, NULL),
-(15, 'agricultural three', 'media/category/150821_17_27_50.jpg', NULL, NULL),
-(16, 'demo data', 'media/category/150821_17_49_50.jpg', NULL, NULL),
-(17, 'Services ssdfsfsv sddf', 'media/category/211221_16_47_58.png', NULL, NULL);
+(13, 'English Version', 'media/category/150821_17_30_47.png', NULL, NULL),
+(14, 'Bangla Version', 'media/category/150821_17_02_50.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -104,8 +101,16 @@ INSERT INTO `messages` (`id`, `from`, `to`, `message`, `type`, `image`, `created
 (18, 35, 2, NULL, 1, 'media/category/131221_11_12_54.png', NULL, NULL),
 (19, 1, 35, 'hi', 0, NULL, NULL, NULL),
 (20, 1, 35, 'hi', 1, NULL, NULL, NULL),
-(21, 1, 35, 'dfgfdg', 0, NULL, NULL, NULL),
-(22, 1, 35, 'dfgfdg', 1, NULL, NULL, NULL);
+(21, 37, 2, 'hi', 0, NULL, NULL, NULL),
+(22, 37, 2, 'hi', 1, NULL, NULL, NULL),
+(23, 2, 35, 'hello', 0, NULL, NULL, NULL),
+(24, 2, 35, 'hello', 1, NULL, NULL, NULL),
+(25, 2, 36, 'hi', 0, NULL, NULL, NULL),
+(26, 2, 36, 'hi', 1, NULL, NULL, NULL),
+(27, 2, 37, 'hello', 0, NULL, NULL, NULL),
+(28, 2, 37, 'hello', 1, NULL, NULL, NULL),
+(29, 37, 2, 'kmn acho', 0, NULL, NULL, NULL),
+(30, 37, 2, 'kmn acho', 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -150,7 +155,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (27, '2021_04_09_114405_create_slider_table', 11),
 (28, '2021_08_15_040714_create_trainer_table', 12),
 (29, '2021_08_15_044645_create_trainers_table', 13),
-(30, '2021_12_13_060241_create_messages_table', 14);
+(30, '2021_12_13_060241_create_messages_table', 14),
+(31, '2022_03_10_042629_create_review_table', 15);
 
 -- --------------------------------------------------------
 
@@ -261,6 +267,31 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `teacher_id` int(11) NOT NULL,
+  `review` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `comment` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`id`, `user_id`, `teacher_id`, `review`, `comment`, `created_at`, `updated_at`) VALUES
+(1, 39, 37, '5', 'Vary Good Teacher', NULL, NULL),
+(2, 40, 37, '4', 'good teacher', NULL, NULL),
+(3, 40, 35, '5', 'good teacher', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `rolls`
 --
 
@@ -308,7 +339,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `email`, `email_second`, `google`, `linkdin`, `off_day`, `phone`, `phone_optional`, `address`, `logo`, `facebook`, `twitter`, `created_at`, `updated_at`) VALUES
-(1, 'info@problem.com', 'contact@landscap.com', 'facebook.com', 'facebook.com', 'Monday - Friday : 800 - 1900', '01800 984 5478', '+ 01865 524 8503', '42B, Tailstoi Town 5248 MT, Wordwide Country', 'media/category/211221_16_55_57.png', 'facebook.com', 'facebook.com', NULL, NULL);
+(1, 'info@problem.com', 'contact@landscap.com', 'facebook.com', 'facebook.com', 'Monday - Friday : 800 - 1900', '01800 984 5478', '+ 01865 524 8503', '42B, Tailstoi Town 5248 MT, Wordwide Country', 'media/category/080322_19_27_39.jpg', 'facebook.com', 'facebook.com', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -335,7 +366,7 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id`, `slider_1`, `slider_2`, `slider_3`, `slider_4`, `slider_5`, `slider_6`, `slider_7`, `slider_8`, `created_at`, `updated_at`) VALUES
-(1, 'media/product/1718934521546865.PNG', 'media/product/1718934522361057.PNG', 'media/product/1718934522644019.PNG', 'media/product/1718934522976930.PNG', 'media/product/1718934523261383.PNG', 'media/product/1718934523546339.PNG', 'media/product/1718934523886443.PNG', 'media/product/1718934524173741.PNG', NULL, NULL);
+(1, 'media/product/1726759783613729.jpg', 'media/product/1726759789776018.jpg', 'media/product/1726759790789178.jpg', 'media/product/1718934522976930.PNG', 'media/product/1718934523261383.PNG', 'media/product/1718934523546339.PNG', 'media/product/1718934523886443.PNG', 'media/product/1718934524173741.PNG', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -350,6 +381,11 @@ CREATE TABLE `users` (
   `user_status` int(11) DEFAULT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `university_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `degree` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `experience` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `salary` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -365,13 +401,17 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `roll_id`, `user_status`, `email`, `phone`, `email_verified_at`, `password`, `remember_token`, `type`, `created_at`, `updated_at`, `image`, `specialist_id`, `details`) VALUES
-(1, 'admin', '1', NULL, 'admin@gmail.com', NULL, NULL, '$2y$10$O1SYDFT/aP.8K8TCS4UQpORazuWKdVTsCa9qfSjDI41g3e8aUwiza', 'cVLDJXwCeZlTMEp0XHYqw7Oqs9Ugum0z5Fl6VFBm7nVDbocu85mGKcEPifPz', 1, '2021-03-17 02:55:34', '2021-03-17 02:55:34', NULL, NULL, NULL),
-(2, 'user', '2', NULL, 'user@gmail.com', NULL, NULL, '$2y$10$8y5SAvZ8avpRdJOLskPw6.7wKcdU.9TvjNdvh8dgZu.MKRoHeUJ8.', NULL, NULL, '2021-03-17 02:56:01', '2021-03-17 02:56:01', NULL, NULL, NULL),
-(35, 'Specialist', '3', 1, 'specialist@gmail.com', '01632054022', NULL, '$2y$10$1vsIDFf9J5./WVGVK6nwROKAWP9ebAZVjmshFixuln26NgTEwb2Lm', NULL, NULL, '2021-12-11 08:20:54', '2021-12-11 08:20:54', 'media/category/121221_19_23_40.png', 13, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'),
-(36, 'asas', '3', 1, 'a@gmail.com', '01785449161', NULL, '$2y$10$sQjC1yI5k/9Idh4n5ye9UeKIOVzPh0QadZmn4Yf.19ZNIYGLRKmZ2', NULL, NULL, '2021-12-12 14:34:45', '2021-12-12 14:34:45', 'media/category/121221_20_38_35.png', 14, '<p>fdsf dfdf</p>'),
-(37, 'anika', '3', 1, 'anika@gmail.com', NULL, NULL, '$2y$10$dwUlROUO/D3U8olaoDJqQ.R1d0hkFsefk4Q1pA/SR/ccd/P81vuva', NULL, NULL, '2021-12-21 11:04:55', '2021-12-21 11:04:55', NULL, NULL, NULL),
-(38, 'anika talukdar', '2', NULL, 'talukdar@gmail.com', NULL, NULL, '$2y$10$drR4nOF0RSGkek5L2MPTh.sCNQz2bxGxeLYXkxbLPODtDSWaPDO.W', NULL, NULL, '2021-12-21 11:10:49', '2021-12-21 11:10:49', NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `name`, `roll_id`, `user_status`, `email`, `phone`, `university_name`, `degree`, `experience`, `subject`, `salary`, `email_verified_at`, `password`, `remember_token`, `type`, `created_at`, `updated_at`, `image`, `specialist_id`, `details`) VALUES
+(1, 'admin', '1', NULL, 'admin@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$O1SYDFT/aP.8K8TCS4UQpORazuWKdVTsCa9qfSjDI41g3e8aUwiza', 'lxWhiJWxutB3jQtFKcMn6hTUfouCjNcIybCFewO4spb8XXzlQgRjJSi4vSzu', 1, '2021-03-17 02:55:34', '2021-03-17 02:55:34', NULL, NULL, NULL),
+(2, 'user', '2', NULL, 'user@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$8y5SAvZ8avpRdJOLskPw6.7wKcdU.9TvjNdvh8dgZu.MKRoHeUJ8.', NULL, NULL, '2021-03-17 02:56:01', '2021-03-17 02:56:01', NULL, NULL, NULL),
+(35, 'Rupa Akter', '3', 1, 'rupa@gmail.com', '01632054022', NULL, NULL, NULL, NULL, '3000', NULL, '$2y$10$1vsIDFf9J5./WVGVK6nwROKAWP9ebAZVjmshFixuln26NgTEwb2Lm', NULL, NULL, '2021-12-11 08:20:54', '2021-12-11 08:20:54', 'media/category/121221_19_23_40.png', 13, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\n\nExcepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'),
+(36, 'Akash islam', '3', 1, 'akash@gmail.com', '01785449161', NULL, NULL, NULL, NULL, '4000', NULL, '$2y$10$sQjC1yI5k/9Idh4n5ye9UeKIOVzPh0QadZmn4Yf.19ZNIYGLRKmZ2', NULL, NULL, '2021-12-12 14:34:45', '2021-12-12 14:34:45', 'media/category/121221_20_38_35.png', 14, '<p>fdsf dfdf</p>'),
+(37, 'Sabbir Ahamad', '3', 1, 'sabbir@gmail.com', '01785449161', 'Daffodil International University', 'B.s.c. In SWE', 'More than 3 year', 'Computer Fundamental', '10000', NULL, '$2y$10$/SlG36c6xPdFtB0.8RXi7.Z.e5ib9MyI0LcCNcV87wDDXm21N5fyu', NULL, NULL, '2022-03-08 07:53:16', '2022-03-08 07:53:16', 'media/category/080322_13_16_55.png', 14, 'Teacher is vary good learning for computer fundamental, and more then 3 year experience this subject ,thank you .'),
+(39, 'NAjmul Hasan', '2', NULL, 'najmul@gmail.compuja', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$hndhpmK3IqdUOM9THpVSZuvQaRRrgF3CpiSAcGzclCvZR8G/oEVaW', NULL, NULL, '2022-03-09 22:22:44', '2022-03-09 22:22:44', NULL, NULL, NULL),
+(40, 'Sattay Debnath', '2', NULL, 'sattay@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$luNm1Zy8RGpwu.U/cqRVJ.jAhmDvsMjIRBaJHjIOsLnrjVako7Osm', NULL, NULL, '2022-03-10 00:48:17', '2022-03-10 00:48:17', NULL, NULL, NULL),
+(41, 'Sandip Sarker', '3', 1, 'sandip@gmail.com', '1454545', 'Daffodil International University', 'B.S.C in SWE', '4 Year', 'Math', '45000', NULL, '$2y$10$XwAlD/aSweuF3.T8gYFQ3.r5BUu9V2opbOnMxPpuy40KNv5jv5.cG', NULL, NULL, NULL, NULL, 'media/category/100322_09_23_08.png', 13, '<p>good teaching math&nbsp;</p>'),
+(42, 'Rahainul islam', '3', 1, 'raihan@gmail.com', '1454545 23323', 'Daffodil International University', 'B.S.C in SWE', '3 Year', 'English', '70000', NULL, '$2y$10$mxQqaNju5sT/oSnYaJiE0uwW.tPMRro/zrT8kdh9p.2KlHR5gs.Bm', NULL, NULL, NULL, NULL, 'media/category/100322_09_53_12.png', 13, '<p>good teaching for&nbsp;English</p>'),
+(43, 'Riad Hasan', '3', 1, 'riad@gmail.com', '145454523323', 'Daffodil International University', 'B.S.C in SWE', '3 Year', 'English', '60000', NULL, '$2y$10$mxQqaNju5sT/oSnYaJiE0uwW.tPMRro/zrT8kdh9p.2KlHR5gs.Bm', NULL, NULL, NULL, NULL, 'media/category/100322_09_53_12.png', 13, '<p>good teaching for&nbsp;English</p>');
 
 --
 -- Indexes for dumped tables
@@ -443,6 +483,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `rolls`
 --
 ALTER TABLE `rolls`
@@ -475,7 +521,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -487,13 +533,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `oauth_clients`
@@ -506,6 +552,12 @@ ALTER TABLE `oauth_clients`
 --
 ALTER TABLE `oauth_personal_access_clients`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `rolls`
@@ -529,7 +581,7 @@ ALTER TABLE `slider`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
