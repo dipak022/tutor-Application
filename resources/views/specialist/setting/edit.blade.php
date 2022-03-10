@@ -2,7 +2,7 @@
 @php
 $category =DB::table('category')->get();
 @endphp
-@extends('layouts.farmer.app')
+@extends('layouts.teacher.app')
 
 @section('content')
 

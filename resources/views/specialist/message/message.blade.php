@@ -1,5 +1,5 @@
 
-@extends('layouts.farmer.app')
+@extends('layouts.teacher.app')
 
 @section('details')
 

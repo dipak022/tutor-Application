@@ -9,12 +9,12 @@
    <div class="row ">
        <div class="col-12  align-self-center">
            <div class="sub-header mt-3 py-3 align-self-center d-sm-flex w-100 rounded">
-               <div class="w-sm-100 mr-auto"><h4 class="mb-0"> Manage Saller Account</h4></div>
+               <div class="w-sm-100 mr-auto"><h4 class="mb-0"> Teacher Permition Accept Account</h4></div>
 
                <ol class="breadcrumb bg-transparent align-self-center m-0 p-0">
                    <li class="breadcrumb-item">Home</li>
-                   <li class="breadcrumb-item">Saller </li>
-                   <li class="breadcrumb-item active"><a href="#">Saller Permition List</a></li>
+                   <li class="breadcrumb-item">teacher </li>
+                   <li class="breadcrumb-item active"><a href="#">Teacher Permition Accept List</a></li>
                </ol>
            </div>
        </div>
@@ -29,7 +29,7 @@
        <div class="col-12 mt-3">
            <div class="card">
                <div class="card-header  justify-content-between align-items-center">                               
-                   <h4 class="card-title">Category Data</h4> 
+                   <h4 class="card-title">Teacher Permition Accept Data</h4> 
                     <div class="pull-right">
                        
                     </div>
@@ -40,8 +40,8 @@
                        <table  id="categoryTable" class="display table dataTable table-striped table-bordered" >
                            <thead>
                                <tr>
-                                   <th> Farmer Specialist Name </th>
-                                   <th>Farmer Specialist Email</th>
+                                   <th> Teacher Name </th>
+                                   <th>Teacher Email</th>
                                   
                                    <th>Action</th>
                                </tr>

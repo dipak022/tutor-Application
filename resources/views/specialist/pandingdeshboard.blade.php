@@ -1,6 +1,6 @@
 
 
-@extends('layouts.farmer.apppanding')
+@extends('layouts.teacher.apppanding')
 
  @section('details')
 

@@ -16,8 +16,8 @@ Route::group(['prefix' => 'admin','middleware'=>['admin','auth'],'namespace'=>'a
     Route::get('dashboard', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.deshboard');
 
     //permition 
-    Route::get('/permition',[App\Http\Controllers\farmer\PermitionController::class, 'permition'])->name('permition.saller');
-    Route::get('/permition/accept',[App\Http\Controllers\farmer\PermitionController::class, 'permition_Accept'])->name('permition');
+    Route::get('/permition',[App\Http\Controllers\teacher\PermitionController::class, 'permition'])->name('permition.saller');
+    Route::get('/permition/accept',[App\Http\Controllers\teacher\PermitionController::class, 'permition_Accept'])->name('permition');
 
     //Category Route here
     Route::get('category', [App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('category');
@@ -41,8 +41,8 @@ Route::get('useraccount/', [App\Http\Controllers\Admin\SettingController::class,
 Route::get('admin/delete/useraccount/{id}', [App\Http\Controllers\Admin\SettingController::class,'user_accont_delete']);
 
 // permition seller account route here  
-Route::get('admin/permition/specialist/{id}', [App\Http\Controllers\farmer\PermitionController::class, 'accept_saller_account']);
-Route::get('admin/delete/permition/specialist/{id}', [App\Http\Controllers\farmer\PermitionController::class, 'delete_saller_account']);
+Route::get('admin/permition/specialist/{id}', [App\Http\Controllers\teacher\PermitionController::class, 'accept_saller_account']);
+Route::get('admin/delete/permition/specialist/{id}', [App\Http\Controllers\teacher\PermitionController::class, 'delete_saller_account']);
 
 //slider update
 Route::post('admin/update/slider/{id}', [App\Http\Controllers\Admin\SettingController::class, 'sliderupdate']);
@@ -75,19 +75,19 @@ Route::group(['prefix' => 'user','middleware'=>['user','auth'],'namespace'=>'use
 });
 
 Route::group(['prefix' => 'specialist','middleware'=>['specialist','auth'],'namespace'=>'specialist'], function() {
-    Route::get('/dashboard',[App\Http\Controllers\farmer\SpecialistController::class, 'index'])->name('specialist.deshboard');
+    Route::get('/dashboard',[App\Http\Controllers\teacher\SpecialistController::class, 'index'])->name('specialist.deshboard');
     
-    Route::get('update/profile/', [App\Http\Controllers\farmer\SpecialistController::class, 'UpdateProfile'])->name('update.profile');
+    Route::get('update/profile/', [App\Http\Controllers\teacher\SpecialistController::class, 'UpdateProfile'])->name('update.profile');
    
 });
-Route::post('specialist/update/{id}',[App\Http\Controllers\farmer\SpecialistController::class, 'Update']);
+Route::post('specialist/update/{id}',[App\Http\Controllers\teacher\SpecialistController::class, 'Update']);
 
 
 // store message 
 Route::get('message/{id}', [App\Http\Controllers\User\FrontendController::class, 'Message']);
 Route::post('/send/message/',[App\Http\Controllers\User\MessageController::class, 'sendmessage'])->name('store.message');
-Route::get('/farmer/message/',[App\Http\Controllers\User\MessageController::class, 'farmermessage'])->name('farmer.message');
-Route::get('farmer/sms/{id}', [App\Http\Controllers\User\MessageController::class, 'FarmerSpecialistMessage']);
+Route::get('/teacher/message/',[App\Http\Controllers\User\MessageController::class, 'farmermessage'])->name('farmer.message');
+Route::get('teacher/sms/{id}', [App\Http\Controllers\User\MessageController::class, 'FarmerSpecialistMessage']);
 
 //contact
 Route::get('contact/',[App\Http\Controllers\User\FrontendController::class, 'contactPage'])->name('contact');
