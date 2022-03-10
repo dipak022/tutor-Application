@@ -35,13 +35,20 @@
                                 <input type="email" placeholder="E-Mail" id="input-email" class="form-control" name="email">
                             </div>
                         </div>
+
+                        <div class="form-group required">
+                            <label class="col-sm-2 control-label" for="input-email">Phone </label>
+                            <div class="col-sm-10">
+                                <input type="number" placeholder="Phone Number" id="input-email" class="form-control" name="phone">
+                            </div>
+                        </div>
                         <div class="form-group required">
                             <label class="col-sm-2 control-label" for="input-country">Account Type</label>
                             <div class="col-sm-10">
                                 <select  name="user_roll" class="form-control">
                                     <option disabled="" selected=""> Please Select Account Type</option>
-                                    <option value="2">Farmer </option>
-                                    <option value="3">Farmer Specialist</option>
+                                    <option value="2">User </option>
+                                    <option value="3">Teacher</option>
                                     
                                 </select>
                             </div>

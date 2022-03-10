@@ -47,10 +47,10 @@
               <div class="prd_detail_desc">
                 <h3 class="black-color mar_btm18"> <span class="lytgreen-head">{{$specialist->name}}</span></h3>
                 <p>Subject : {{$specialist->subject}} - ({{$specialist->categoty_name}})</p>
-				<p>University Name : {{$specialist->university_name}} </p>
-				<p>Degree : {{$specialist->degree}} </p>
-				<p>Exparience : {{$specialist->experience}} </p>
-				<p>Salary Per Month : {{$specialist->salary}} </p>
+			         	<p>University Name : {{$specialist->university_name}} </p>
+                <p>Degree : {{$specialist->degree}} </p>
+                <p>Exparience : {{$specialist->experience}} </p>
+                <p>Salary Per Month : {{$specialist->salary}} </p>
                 <p>Email :{{$specialist->email}}</p>
                 <p>Phone :{{$specialist->phone}}</p>
                 <p> {!!$specialist->details!!}</p>
@@ -67,18 +67,33 @@
     </div>
     <div class="subscribe_bg wdt_100">
       <div class="container">
-        <h3 class="black-color mar_btm23">Subscribe Our <span class="lytgreen-head">Newsletter</span></h3>
+        <h3 class="black-color mar_btm23">User Review <span class="lytgreen-head">Section</span></h3>
         <div class="row">
           <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 subscribe_txt">
-            <p>Totam rem aperiam, eaque ipsa quae ab illo invent ore verit atis et quasi architecto beatae vitae dict eaque ipsa quae ab.Teritatis et quasi architecto.</p>
+            <p>All Review show here </p>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <div class="subscribe_search">
-              <form role="search" class="navbar-form navbar-left">
-                <input type="text" value="Enter your email address" onblur="if(value=='') value = 'Enter your email address'" onfocus="if(value=='Enter your email address') value = ''" class="form-control">
-                <button type="submit" class="btn btn-default">submit</button>
-              </form>
-            </div>
+          <div class="rating-css" >
+            <h2 class="black-color mar_btm23"> Review here for <span class="lytgreen-head" style="color:orange;"> {{ $specialist->name }}</span></h2>
+            @foreach($rating_details as $rat)
+            <h2><b >Reviewer Name : <span style="color:orange;">{{$rat->name}}</span></b></h2>
+            <h2><b >Comment: <span style="color:orange;">{{$rat->comment}}</span></b></h2>
+						<div class="star-icon">
+            <span style="color:black;"><b>Ratings  :  </b> </span>
+						@for($i=1; $i<=$rat->review; $i++)
+
+						<span><i class="fa fa-star checked" style="color:orange;"></i></span>
+						@endfor
+					
+						<span style="color:orange;">({{$rat->review}}review)</span>
+				    </div>
+            <hr>
+             @endforeach
+			   	</div>
+          
+				
+				  
+          
           </div>
         </div>
       </div>
@@ -91,7 +106,7 @@
         
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		  <form class="add-contact-form" method="post" action=""enctype="multipart/form-data">    
+		  <form class="add-contact-form" method="post" action="{{ route('store.review') }}" enctype="multipart/form-data">    
                @csrf
               <div class="messages"></div>
               <div class="row">
@@ -121,24 +136,24 @@
               <div class="row">
 				<div class="rating-css">
 						<div class="star-icon">
-							<input type="radio" value="1" name="product_rating" checked id="rating1">
+							<input type="radio" value="1" name="teacher_rating" checked id="rating1">
 							<label for="rating1" class="fa fa-star"></label>
-							<input type="radio" value="2" name="product_rating" id="rating2">
+							<input type="radio" value="2" name="teacher_rating" id="rating2">
 							<label for="rating2" class="fa fa-star"></label>
-							<input type="radio" value="3" name="product_rating" id="rating3">
+							<input type="radio" value="3" name="teacher_rating" id="rating3">
 							<label for="rating3" class="fa fa-star"></label>
-							<input type="radio" value="4" name="product_rating" id="rating4">
+							<input type="radio" value="4" name="teacher_rating" id="rating4">
 							<label for="rating4" class="fa fa-star"></label>
-							<input type="radio" value="5" name="product_rating" id="rating5">
+							<input type="radio" value="5" name="teacher_rating" id="rating5">
 							<label for="rating5" class="fa fa-star"></label>
 				       </div>
 				</div>
               </div>
-			  <input type="hidden"  name="specialist_id" value="{{ $specialist->id }}" >
+			  <input type="hidden"  name="teacher_id" value="{{ $specialist->id }}" >
 			<div class="row" >
 				<div class="col-md-12" >
 					<div class="form-group" style="width: 400px; margin-left: 400px;height: 100px;">
-					<input id="subject" type="text" name="subject" placeholder="Subject" required="" class="form-control" >
+					<input id="subject" type="text" name="comment" placeholder="Any Possitave Comment" required="" class="form-control" >
 					</div>
 				</div>
 			</div>

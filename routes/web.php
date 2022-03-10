@@ -102,6 +102,10 @@ Route::get('all/services/',[App\Http\Controllers\User\FrontendController::class,
 // search.teacher
 Route::post('search/teacher/',[App\Http\Controllers\User\FrontendController::class, 'Search_teacher'])->name('search.teacher');
 
+//store.review
+Route::post('store/review/',[App\Http\Controllers\reviewController::class, 'storereview'])->name('store.review');
+
+
 
 
 

@@ -60,7 +60,9 @@
                 </ul>
               </li>
               <li class="dropdown"><a href="{{ route('allservices') }}">All  Teacher</a></li>
+              <!--
               <li class="dropdown"><a href="{{route('gallery')}}" class="">Gallery</a></li>
+              -->
               <li><a href="{{route('contact')}}">Contact</a></li>
 			        <li class="dropdown"><a  class="">Account</a>
               @guest

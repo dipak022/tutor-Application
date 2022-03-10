@@ -54,7 +54,20 @@ class FrontendController extends Controller
         ->select('users.*','category.categoty_name')
         ->where('users.id',$id)->where('users.user_status',1)
         ->first();
-        return  view('users.profile_details',compact('specialist'));
+        $rating_details = DB::table('review')
+        ->join('users','review.user_id','users.id')
+        ->where('review.teacher_id',$specialist->id)
+        ->select('review.*','users.name')->get();
+         $rating_found = DB::table('review')->where('teacher_id',$specialist->id)->get();
+         //return response()->json($rating_details);
+         if($rating_details){
+            return  view('users.profile_details',compact('specialist','rating_details','rating_found'));
+
+         }else{
+            return $rating_details= "nai";
+            return  view('users.profile_details',compact('specialist','rating_details','rating_found'));
+         }
+       
         
         
     }
