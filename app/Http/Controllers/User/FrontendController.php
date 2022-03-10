@@ -133,6 +133,7 @@ class FrontendController extends Controller
     public function galleryPage(){
         return  view('users.gallery');
     }
+ 
 
     public function all_services(){
         return  view('users.all_services');

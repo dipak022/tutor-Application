@@ -105,6 +105,14 @@ Route::post('search/teacher/',[App\Http\Controllers\User\FrontendController::cla
 //store.review
 Route::post('store/review/',[App\Http\Controllers\reviewController::class, 'storereview'])->name('store.review');
 
+//teacher.create.account
+Route::get('teacher/create/account/',[App\Http\Controllers\TeacherController::class, 'teacheraccount'])->name('teacher.create.account');
+
+//store.teacher.account
+
+Route::post('store/teacher/account/',[App\Http\Controllers\TeacherController::class, 'storeteacheraccount'])->name('store.teacher.account');
+
+
 
 
 

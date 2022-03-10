@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-12  align-self-center">
             <div class="sub-header mt-3 py-3 align-self-center d-sm-flex w-100 rounded">
-                <div class="w-sm-100 mr-auto"><h4 class="mb-0">Farmer Specialist Account Create Successfully.</h4> <p>Welcome to  Farmer Specialist panel</p></div>
+                <div class="w-sm-100 mr-auto"><h4 class="mb-0">Teacher Account Create Successfully.</h4> <p>Welcome to  Teacher panel</p></div>
 
                 <ol class="breadcrumb bg-transparent align-self-center m-0 p-0">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -44,7 +44,7 @@
     </div>
     <!-- END: Breadcrumbs-->
 
-    <div class="w-sm-100 mr-auto"><h4 class="mb-0">Panding for andin checked you account please wait !! and try again .</h4> <p>Welcome to  Farmer Specialist panel</p></div>
+    <div class="w-sm-100 mr-auto"><h4 class="mb-0">Panding for andin checked you account please wait !! and try again .</h4> <p>Welcome to  Teacher panel</p></div>
                             <a class="btn btn-danger" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"class="dropdown-item px-2 text-danger align-self-center d-flex">
                                 <span class="icon-logout mr-2 h6  mb-0"></span> Sign Out
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
